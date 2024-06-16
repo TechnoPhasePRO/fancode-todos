@@ -1,72 +1,63 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# FanCode Todos Check
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This project is a NestJS application that checks if all users from the city "FanCode" have completed more than half of their todo tasks. The city "FanCode" is identified by specific latitude and longitude ranges.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Setting Up the Project
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
+1. Clone the repository:
+```json
+   git clone https://github.com/TechnoPhasePRO/fancode-todos
+   cd fancode-todos
 ```
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+2. Install dependencies:
+```json
+   npm install
 ```
 
-## Test
+3. Start the NestJS application:
+```json
+  npm run start
+```
+  This will start the application on http://localhost:3000.
 
-```bash
-# unit tests
-$ npm run test
+## API Endpoint
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+Check Todos Completion
+- URL: `/fancode/check-todos`
+- Method: GET
+- Description: This endpoint fetches all users and todos from the JSONPlaceholder API, filters users based on the city "FanCode" criteria (latitude between -40 to 5 and longitude between 5 to 100), and calculates the percentage of completed todos for each user. It returns a list of users with their completion percentage and whether they meet the criteria of having more than 50% todos completed.
+```json
+Response Body:
+[
+    {
+        "userId": 1,
+        "name": "Leanne Graham",
+        "completedPercentage": 55.00000000000001,
+        "meetsCriteria": true
+    },
+    {
+        "userId": 5,
+        "name": "Chelsey Dietrich",
+        "completedPercentage": 60,
+        "meetsCriteria": true
+    },
+    {
+        "userId": 10,
+        "name": "Clementina DuBuque",
+        "completedPercentage": 60,
+        "meetsCriteria": true
+    }
+]
 ```
 
-## Support
+## Additional Information
+This project uses the JSONPlaceholder API for fetching users and todos data:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- Users API: http://jsonplaceholder.typicode.com/users
+- Todos API: http://jsonplaceholder.typicode.com/todos
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+For more information about NestJS, visit the [NestJS Documentation](https://docs.nestjs.com/).
 
 ## License
 
