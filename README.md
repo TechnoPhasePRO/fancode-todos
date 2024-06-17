@@ -34,7 +34,7 @@ Check Todos Completion
 - URL: `/fancode/check-todos`
 - Method: GET
 - Description: This endpoint fetches all users and todos from the JSONPlaceholder API, filters users based on the city "FanCode" criteria (latitude between -40 to 5 and longitude between 5 to 100), and calculates the percentage of completed todos for each user. It returns a list of users with their completion percentage and whether they meet the criteria of having more than 50% todos completed.
-```json
+```sh
 Response Body:
 [
     {
