@@ -5,18 +5,25 @@ This project is a NestJS application that checks if all users from the city "Fan
 ## Setting Up the Project
 
 1. Clone the repository:
-```json
+```sh
    git clone https://github.com/TechnoPhasePRO/fancode-todos
    cd fancode-todos
 ```
 
 2. Install dependencies:
-```json
+```sh
    npm install
 ```
 
+3. Set up environment variables:
+Create a .env file in the root directory and add the following:
+```arduino
+USERS_URL=http://jsonplaceholder.typicode.com/users
+TODOS_URL=http://jsonplaceholder.typicode.com/todos
+```
+
 3. Start the NestJS application:
-```json
+```sh
   npm run start
 ```
   This will start the application on http://localhost:3000.

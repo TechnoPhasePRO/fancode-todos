@@ -1,12 +1,8 @@
 import { Module } from '@nestjs/common';
-import { FancodeController } from './fancode.controller';
-import { TodoService } from './todo.service';
-import { UserService } from './user.service';
+import { FancodeModule } from './modules/fancode/fancode.module';
+import { ConfigModule } from './config/config.module';
 
 @Module({
-  imports: [],
-  controllers: [FancodeController],
-  providers: [UserService, TodoService],
+  imports: [ConfigModule, FancodeModule],
 })
 export class AppModule {}
- 
